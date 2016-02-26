@@ -1,5 +1,8 @@
 package com.hybrid.model;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement	//XML Element라는 의미의 annotation
 public class Dept {
 	int deptno;
 	String dname;
