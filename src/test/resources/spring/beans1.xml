@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean class="com.hybrid.CollectionTest">
+		<property name="color">
+	    <list>
+	        <value>red</value>
+	        <value>green</value>
+	        <value>blue</value>
+	    </list>
+	    </property>
+	    <property name="language">
+			<map>
+			    <entry key="한국" value="한국어"/>
+			    <entry key="영국" value="영어" />
+			    <entry key="일본">
+			        <value>일본어</value>
+			    </entry>
+			    <entry>
+			        <key>
+			            <value>중국</value>
+			        </key>
+			        <value>중국어</value>
+			    </entry>
+			</map>
+	    </property>
+	    <property name="locale">
+	        <set>
+	            <value>서울</value>
+	            <value>도쿄</value>
+	            <value>베이징</value>
+	        </set>
+	    </property>
+	</bean>
+</beans>
