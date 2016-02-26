@@ -14,6 +14,23 @@ public class DeptMapperTest {
 		GenericXmlApplicationContext ctx = null;
 		ctx = new GenericXmlApplicationContext("classpath:spring/beans_db.xml");
 		
+		DeptMapper mapper = ctx.getBean(DeptMapper.class);
+		
+		List<Dept> depts = mapper.selectAll();
+		
+		for (Dept d : depts) {
+			System.out.println(d.getDeptno() + " " + d.getDname() + " " + d.getLoc());
+		}
+
+		
+		if(ctx!=null) ctx.close();
+	}
+	
+	void test1() {
+		
+		GenericXmlApplicationContext ctx = null;
+		ctx = new GenericXmlApplicationContext("classpath:spring/beans_db.xml");
+		
 		//해당하는 bean클래스가 한개일때만 parameter를 이와같이 한개만 작성 가능하다.
 		SqlSessionTemplate sqlSession = ctx.getBean(SqlSessionTemplate.class);
 		
