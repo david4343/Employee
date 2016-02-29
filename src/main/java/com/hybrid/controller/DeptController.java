@@ -58,7 +58,7 @@ public class DeptController {	//Servlet 역할과 비슷하다.
 	
 	@RequestMapping(value="/dept/list/xml", method=RequestMethod.PUT)
 	@ResponseBody
-	public Dept updateDept(Dept dept) {
+	public int updateDept(Dept dept) {
 		log.info("update");
 		log.info("123deptno = " + dept.getDeptno());
 		log.info("123dname = " + dept.getDname());

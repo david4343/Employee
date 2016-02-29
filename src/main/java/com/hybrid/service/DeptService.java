@@ -44,10 +44,10 @@ public class DeptService {
 	}
 	
 	@Transactional
-	public Dept update(Dept dept) {
-		deptMapper.updateByDeptno(dept);
+	public int update(Dept dept) {
+		int i = deptMapper.updateByDeptno(dept);
 		Dept dept1 = deptMapper.selectByDeptno(dept.getDeptno());
-		return dept1;
+		return i;
 	}
 	
 }
