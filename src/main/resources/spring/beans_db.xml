@@ -39,10 +39,14 @@
 <bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
 	<constructor-arg ref="sqlSessionFactory" />
 </bean>
-
+<!-- DeptMapeer -->
 <bean class="org.mybatis.spring.mapper.MapperFactoryBean">
 	<property name="mapperInterface" value="com.hybrid.mapper.DeptMapper" />
 	<property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>	
 </bean>
-
+<!-- EmpMapper -->
+<bean class="org.mybatis.spring.mapper.MapperFactoryBean">
+	<property name="mapperInterface" value="com.hybrid.mapper.EmpMapper" />
+	<property name="sqlSessionTemplate" ref="sqlSessionTemplate"/>	
+</bean>
 </beans>

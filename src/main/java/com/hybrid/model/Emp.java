@@ -11,7 +11,7 @@ public class Emp {
 	private Date hiredate;
 	private Double sal;		//Nullable이기에 객체로 만들었다!
 	private Double comm;	//Nullable이기에 객체로 만들었다!
-	private Integer depno;	//Nullable이기에 객체로 만들었다!
+	private Integer deptno;	//Nullable이기에 객체로 만들었다!
 	
 	public int getEmpno() {
 		return empno;
@@ -55,10 +55,10 @@ public class Emp {
 	public void setComm(Double comm) {
 		this.comm = comm;
 	}
-	public Integer getDepno() {
-		return depno;
+	public Integer getDeptno() {
+		return deptno;
 	}
-	public void setDepno(Integer depno) {
-		this.depno = depno;
+	public void setDeptno(Integer depno) {
+		this.deptno = depno;
 	}
 }
