@@ -44,10 +44,11 @@ public class DeptService {
 	}
 	
 	@Transactional
-	public int update(Dept dept) {
+	public Dept update(Dept dept) {
+//		16.3.8 추가한 부분.
 		int i = deptMapper.updateByDeptno(dept);
 		Dept dept1 = deptMapper.selectByDeptno(dept.getDeptno());
-		return i;
+		return dept1;
 	}
 	
 }

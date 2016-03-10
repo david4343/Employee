@@ -7,8 +7,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.hybrid.mapper.EmpMapper;
-import com.hybrid.model.Dept;
 import com.hybrid.model.Emp;
+import com.hybrid.model.Mgr;
 
 @Service	//이 Bean을 자동으로 등록
 public class EmpService {
@@ -32,6 +32,15 @@ public class EmpService {
 		return empMapper.selectByEmpno(empno);
 	}
 	
+
+	@Transactional //Transaction을 시작.
+	public List<Mgr> getMgrs() {
+		
+		List<Mgr> mgrs = empMapper.selectMgrs();
+		
+		return mgrs;
+	}
+	
 	@Transactional
 	public void insert(Emp emp) {
 		empMapper.insert(emp);
@@ -45,10 +54,10 @@ public class EmpService {
 	}
 	
 	@Transactional
-	public int update(Emp emp) {
+	public Emp update(Emp emp) {
 		int i = empMapper.updateByEmpno(emp);
 		Emp emp1 = empMapper.selectByEmpno(emp.getEmpno());
-		return i;
+		return emp1;
 	}
 	
 }
